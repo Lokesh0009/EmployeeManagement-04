@@ -1,0 +1,51 @@
+package com.gl.springboot.cruddemo.config;
+
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.github.javafaker.Faker;
+import com.gl.springboot.cruddemo.dao.EmployeeRepository;
+import com.gl.springboot.cruddemo.entity.Employee;
+import com.gl.springboot.cruddemo.model.Role;
+import com.gl.springboot.cruddemo.repository.UserRepository;
+
+@Configuration
+public class BootstrapApplicationConfig implements ApplicationListener<ApplicationReadyEvent> {
+	
+	private final EmployeeRepository employeeRepository;
+	private final UserRepository userRepository;
+
+    private final Faker faker = new Faker();
+
+    public BootstrapApplicationConfig(EmployeeRepository employeeRepository, UserRepository userRepository) {
+        this.employeeRepository = employeeRepository;
+		this.userRepository = userRepository;
+     
+    }
+
+	@Override
+	public void onApplicationEvent(ApplicationReadyEvent event) {
+				
+		for (int index = 0; index < 10; index ++) {
+			String firstName = faker.name().firstName();
+			String lastName = faker.name().lastName();
+			String domainName = faker.internet().domainName();
+			
+			Employee employee = new Employee(firstName, lastName, firstName+"."+lastName+ "@"+ domainName);
+			this.employeeRepository.save(employee);
+		}
+	}
+	
+	
+	UserDetails Lucky = User.builder().username("Lucky").password("Welcome").build();
+	UserDetails Lokesh= User.builder().username("Lokesh").email("lokesh@gmail.com").password("Welcome");
+	
+	
+	Role  userRole = Role.builder().role("ROLE_USER").build();
+	Role  ADMIN = role.builder()
+	
+	
+}

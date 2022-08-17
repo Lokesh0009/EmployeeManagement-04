@@ -1,0 +1,11 @@
+package com.gl.springboot.cruddemo.util;
+
+public class BCryptPasswordEncoder {
+	
+	public static void main(String args[]) {
+		
+		BCryptPsswordEncoder passwordEncounter = new BCryptPasswordEncoder();
+		
+	}
+
+}

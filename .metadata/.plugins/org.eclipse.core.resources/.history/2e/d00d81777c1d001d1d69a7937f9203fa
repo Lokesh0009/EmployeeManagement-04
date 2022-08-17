@@ -1,0 +1,5 @@
+package com.gl.springboot.cruddemo.security;
+
+public class WebSecurityConfig {
+
+}

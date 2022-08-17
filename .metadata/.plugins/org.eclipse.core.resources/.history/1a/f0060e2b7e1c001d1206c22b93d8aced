@@ -1,0 +1,5 @@
+package com.gl.springboot.cruddemo.util;
+
+public class BCryptPasswordEncoderDemo {
+
+}

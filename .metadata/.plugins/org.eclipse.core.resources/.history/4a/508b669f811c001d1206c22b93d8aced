@@ -1,0 +1,10 @@
+package com.gl.springboot.cruddemo.model;
+
+import static java.lang.annotation.ElementType.PACKAGE;
+
+import java.lang.annotation.Target;
+
+@Target(PACKAGE)
+public @interface Data {
+
+}

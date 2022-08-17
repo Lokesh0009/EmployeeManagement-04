@@ -1,0 +1,11 @@
+package com.gl.springboot.cruddemo.dao;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.cdi.JpaRepositoryExtension;
+
+public class UserRepository extends JpaRepositoryExtension<User, Long> {
+	
+	@Query("SELECT u FROM User WHERE u.username = ?1")
+	public User getUsername(String username);
+
+}

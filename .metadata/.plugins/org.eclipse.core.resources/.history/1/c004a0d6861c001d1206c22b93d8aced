@@ -1,0 +1,5 @@
+package com.gl.springboot.cruddemo.model;
+
+public class User {
+
+}

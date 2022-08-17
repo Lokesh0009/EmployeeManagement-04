@@ -1,0 +1,5 @@
+package com.gl.springboot.cruddemo.dao;
+
+public interface RoleRepository {
+
+}

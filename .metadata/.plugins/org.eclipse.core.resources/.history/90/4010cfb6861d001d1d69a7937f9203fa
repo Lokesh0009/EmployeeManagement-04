@@ -1,0 +1,10 @@
+package com.gl.springboot.cruddemo.dao;
+
+import org.springframework.data.jpa.repository.cdi.JpaRepositoryExtension;
+
+import com.gl.springboot.cruddemo.entity.Role;
+
+public class RoleRepository extends JpaRepositoryExtension<Role, Integer> {
+	
+
+}
